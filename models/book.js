@@ -19,6 +19,10 @@ const bookSchema = new Schema ({
     },
     infoLink: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 })
 
