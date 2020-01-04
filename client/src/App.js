@@ -1,27 +1,26 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Search from './pages/Search';
 import './App.css';
+import Navbar from './components/Navbar';
 
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      
-    }
+const App = () => {
 
-  }
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/Search" component={Search} />
+        </Switch>
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-
-        </header>
       </div>
-    );
-  }
+
+    </Router>
+  );
 }
+
 
 export default App;

@@ -1,0 +1,17 @@
+
+.navbar {
+    background-color: #2d545e!important;
+    box-shadow: 0 2px 10px -2px #12343b;
+    color: ghostwhite;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+h5, p {
+    color: ghostwhite;
+    font-family: 'Lato', sans-serif;
+}
+
+
