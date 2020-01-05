@@ -1,0 +1,16 @@
+
+
+.searchForm {
+    padding: 10px;
+    background-color: #d3d8da;
+    border: 1px solid #2d545e;
+    box-shadow: 0 2px 10px -2px #12343b;
+    font-family: 'Lato', sans-serif;
+}
+
+.searchBtn {
+    background-color: #2d545e!important;
+    border: none;
+    font-family: 'Lato', sans-serif;
+}
+

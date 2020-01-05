@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
+import SearchBar from '../components/SearchBar';
 
-
-
+// Book Search Page
+// Holds axios function calls
 class Search extends Component {
 
     render () {
         return (
             <div>
-            {/* <Navbar /> */}
-            <Jumbotron>
-
-            </Jumbotron>
+            <Jumbotron />
+            <SearchBar />
             </div>
         )
     }
 }
 
 export default Search;
-// export default Navbar;
+

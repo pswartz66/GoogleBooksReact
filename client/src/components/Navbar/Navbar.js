@@ -5,7 +5,7 @@ import './Navbar.css';
 const Navbar = props => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/Search">
                 <h5 className="p-2 m-0">GoogleBooksReact</h5>
             </Link>
 
@@ -28,8 +28,8 @@ const Navbar = props => {
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link
-                            to="/"
-                            className={window.location.pathname === "/" || window.location.pathname === "/Saved"
+                            to="/Saved"
+                            className={window.location.pathname === "/Saved" || window.location.pathname === "/Saved"
                                 ? "nav-link active"
                                 : "nav-link"
                             }
