@@ -14,9 +14,21 @@ const SearchBar = props => {
            <div className="form-group">
                <h4>Book Search</h4>
                 <label>Search</label>
-                <input type="text" className="form-control" id="searchText" placeholder="Search the title of your favorite book..."></input>
+                <input
+                    onChange={props.onChange}
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Search the title of your favorite book..."
+                    >
+                        
+                    </input>
            </div>
-           <button type="submit" className="btn btn-success searchBtn">Search</button>
+           <button
+                onClick={props.onClick}
+                type="submit" 
+                className="btn btn-success searchBtn"
+                >Search
+            </button>
        </form>
     </Container>
     )
