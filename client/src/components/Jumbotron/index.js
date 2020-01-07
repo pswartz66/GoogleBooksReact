@@ -11,7 +11,6 @@ const Jumbotron = ({ children }) => {
             {children}
         </div>
     )
-
 }
 
 export default Jumbotron;

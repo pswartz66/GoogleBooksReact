@@ -33,7 +33,7 @@ class Search extends Component {
                     console.log(err);
                 }
             }
-        )
+            )
     }
 
     // event handler for typing a letter into the
@@ -71,27 +71,21 @@ class Search extends Component {
                     onChange={this.handleInputChange}
                     onClick={this.handleSubmit}
                 />
-
-                {/* <SearchBtn /> */}
-                {/* Results component here */}
-
-            
-                    {/* Map through books array in state
+                {/* Map through books array in state
                     and pass props to results component */}
-                    {this.state.books.map(book => (
-                        <Results
-                            key={book.id}
-                            title={book.volumeInfo.title}
-                            authors={(!book.volumeInfo.authors) ? "No author listed" : book.volumeInfo.authors.join(', ')}
-                            description={(!book.volumeInfo.description) ? "No description available" : book.volumeInfo.description}
-                            link={(!book.volumeInfo.infoLink) ? "No link available" : book.volumeInfo.infoLink}
-                            image={(!book.volumeInfo.imageLinks) ? "No image available" : book.volumeInfo.imageLinks.thumbnail} 
-                            date={(!book.volumeInfo.publishedDate) ? "No date available" : book.volumeInfo.publishedDate}
-                        // add an onclick to save the book to the DB
-                        />
-
-                    ))}
-
+                {this.state.books.map(book => (
+                    <Results
+                        key={book.id}
+                        title={book.volumeInfo.title}
+                        authors={(!book.volumeInfo.authors) ? "No author listed" : book.volumeInfo.authors.join(', ')}
+                        description={(!book.volumeInfo.description) ? "No description available" : book.volumeInfo.description}
+                        link={(!book.volumeInfo.infoLink) ? "No link available" : book.volumeInfo.infoLink}
+                        image={(!book.volumeInfo.imageLinks) ? "No image available" : book.volumeInfo.imageLinks.thumbnail}
+                        date={(!book.volumeInfo.publishedDate) ? "No date available" : book.volumeInfo.publishedDate}
+                        id={book.id}
+                    // add an onclick to save the book to the DB
+                    />
+                ))}
             </div>
         )
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 import './SearchBtn.css';
 
-
 const SearchBtn = props => {
 
     return (
@@ -11,7 +10,6 @@ const SearchBtn = props => {
         >Search
         </button>
     )
-
 }
 
 export default SearchBtn;

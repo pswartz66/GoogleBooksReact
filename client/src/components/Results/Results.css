@@ -38,3 +38,21 @@ img {
     text-decoration: none;
     color: rgb(18, 31, 151);
 }
+.viewBtn {
+    background-color: #638791!important;
+    border: none;
+    font-family: 'Lato', sans-serif;
+}
+.link-text {
+    font-family: 'Lato', sans-serif;
+    color: ghostwhite;
+}
+.link-text:hover {
+    text-decoration: none;
+}
+.saveBtn {
+    background-color: #298a36!important;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    margin: 0 10px 0 10px;
+}
