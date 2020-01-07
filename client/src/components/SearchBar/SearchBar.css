@@ -6,6 +6,8 @@
     border: 1px solid #2d545e;
     box-shadow: 0 2px 10px -2px #12343b;
     font-family: 'Lato', sans-serif;
+    margin-bottom: 10px;
+    border-radius: 6px;
 }
 
 .searchBtn {

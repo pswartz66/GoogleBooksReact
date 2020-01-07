@@ -1,1 +1,40 @@
 
+.card-container {
+    padding: 14px;
+}
+.card {
+    color: black;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0 2px 8px -2px #12343b;
+}
+.card-header {
+    color: black!important;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.card-title {
+    color: black!important;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+.card-text {
+    color: black!important;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+img {
+    height: 65px;
+    width: 65px;
+    margin-right: 20px;
+}
+.book-link {
+    color: rgb(5, 24, 201);
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+.book-link:hover {
+    text-decoration: none;
+    color: rgb(18, 31, 151);
+}

@@ -17,10 +17,14 @@ class Search extends Component {
         }
     }
 
+    // call loadBooks fn on DidMount 
+    // to display current books in database
     componentDidMount = () => {
         this.loadBooks();
     }
 
+    // load books fetches the books from google books API
+    // and sets state to the data as an array
     loadBooks = () => {
         API.getBooks()
             .then(res => this.setState({ books: res.data })
@@ -32,6 +36,8 @@ class Search extends Component {
         )
     }
 
+    // event handler for typing a letter into the
+    // input form
     handleInputChange = (event) => {
         const value = event.target.value
         this.setState({
@@ -41,6 +47,7 @@ class Search extends Component {
         console.log(value);
     }
 
+    // event handler for onclik of submit button in form
     handleSubmit = event => {
         event.preventDefault();
         console.log(this.state.searchInput);
@@ -69,12 +76,13 @@ class Search extends Component {
                 {/* Results component here */}
 
             
+                    {/* Map through books array in state
+                    and pass props to results component */}
                     {this.state.books.map(book => (
-
                         <Results
                             key={book.id}
                             title={book.volumeInfo.title}
-                            authors={(!book.volumeInfo.authors) ? "" : book.volumeInfo.authors.join(' ')}
+                            authors={(!book.volumeInfo.authors) ? "No author listed" : book.volumeInfo.authors.join(', ')}
                             description={(!book.volumeInfo.description) ? "No description available" : book.volumeInfo.description}
                             link={(!book.volumeInfo.infoLink) ? "No link available" : book.volumeInfo.infoLink}
                             image={(!book.volumeInfo.imageLinks) ? "No image available" : book.volumeInfo.imageLinks.thumbnail} 
