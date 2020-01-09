@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/googlebooks"
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 const bookSeed = [
 
@@ -28,3 +26,4 @@ db.Book
         console.error(err);
         process.exit(1);
     })
+

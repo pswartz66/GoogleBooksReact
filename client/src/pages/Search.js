@@ -33,7 +33,7 @@ class Search extends Component {
                     console.log(err);
                 }
             }
-            )
+        )
     }
 
     // event handler for typing a letter into the
@@ -43,7 +43,6 @@ class Search extends Component {
         this.setState({
             searchInput: value
         })
-
         console.log(value);
     }
 
@@ -51,15 +50,22 @@ class Search extends Component {
     handleSubmit = event => {
         event.preventDefault();
         console.log(this.state.searchInput);
-
         API.searchBooks(this.state.searchInput)
             .then(res => this.setState({
                 books: res.data.items
             }))
             .catch(err => console.log(err)
-
-            )
+        )
     }
+
+    // function for saving book to the "/api/books" route
+    saveBook = (bookObj) => {
+        bookObj.preventDefault();
+        API.saveBook({bookObj})
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+    };
+
 
     render = () => {
         return (
@@ -84,6 +90,7 @@ class Search extends Component {
                         date={(!book.volumeInfo.publishedDate) ? "No date available" : book.volumeInfo.publishedDate}
                         id={book.id}
                     // add an onclick to save the book to the DB
+                    // <SaveBtn onClick={() => this.saveBook(book._id)} />
                     />
                 ))}
             </div>

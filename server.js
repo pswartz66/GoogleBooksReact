@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve static files
-if (process.env.NODE_env === "production") {
+if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 // Add routes for API and views

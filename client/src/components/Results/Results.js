@@ -25,7 +25,7 @@ const Results = (props) => {
 
                         {/* on Save button click, save book to DB */}
                         <button className="btn btn-success saveBtn">
-                            <a className="link-text" href={props.link}>
+                            <a className="link-text" {...props}>
                                 Save</a>
                         </button>
                     </div>
