@@ -3,8 +3,16 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import './SavedResults.css'
+import API from '../../utils/API';
 
 const SavedResults = (props) => {
+
+    const deleteBookDB = (id) => {
+        API.deleteBook(id)
+            .then(res => this.loadBooks())
+            .catch(err => console.log(err))
+    }
+
 
     return (
         <Container className="card-container">
@@ -25,7 +33,7 @@ const SavedResults = (props) => {
                         </Button> */}
 
                         {/* on Save button click, save book to DB */}
-                        <Button {...props} variant="danger" className="deleteBtn">
+                        <Button onClick={() => deleteBookDB(props.id)} variant="danger" className="deleteBtn">
                             Delete
                         </Button>
                     </div>
