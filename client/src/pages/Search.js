@@ -20,8 +20,7 @@ class Search extends Component {
     // call loadBooks fn on DidMount 
     // to display current books in database
     componentDidMount = () => {
-        this.loadBooks();
-        
+        // this.loadBooks();
     }
 
     // load books fetches the books from google books API
@@ -37,9 +36,6 @@ class Search extends Component {
         )
     }
 
-    logBooks = () => {
-        console.log(this.books);
-    }
     // event handler for typing a letter into the
     // input form
     handleInputChange = (event) => {
@@ -65,25 +61,25 @@ class Search extends Component {
     // function for saving book to the "/api/books" route
     saveBook = (event) => {
         event.preventDefault();
-        let booksArr = [];
         const id = event.target.getAttribute('id');
+        let book;
         console.log(id);
         // console.log(this.state.books);
         for (let i = 0; i < this.state.books.length; i++) {
             if (id === this.state.books[i].id) {
-                booksArr.push([this.state.books[i].volumeInfo.title,
-                               this.state.books[i].volumeInfo.authors,
-                               this.state.books[i].volumeInfo.description,
-                               this.state.books[i].volumeInfo.infoLink,
-                               this.state.books[i].volumeInfo.imageLinks.thumbnail,
-                               this.state.books[i].volumeInfo.publishedDate,
-                               this.state.books[i].id
-                            ]);
-                console.log(booksArr);
+                book = {
+                    title: this.state.books[i].volumeInfo.title,
+                    authors: this.state.books[i].volumeInfo.authors,
+                    description: this.state.books[i].volumeInfo.description,
+                    infoLink: this.state.books[i].volumeInfo.infoLink,
+                    image: this.state.books[i].volumeInfo.imageLinks.thumbnail,
+                    // id: this.state.books[i].id
+                };
+                console.log(book);
             }
         }
 
-        API.saveBook({ booksArr })
+        API.saveBook( book )
             .then(res => console.log(res))
             .catch(err => console.log('error code' + err))
     };
@@ -111,7 +107,7 @@ class Search extends Component {
                         image={(!book.volumeInfo.imageLinks) ? "No image available" : book.volumeInfo.imageLinks.thumbnail}
                         date={(!book.volumeInfo.publishedDate) ? "No date available" : book.volumeInfo.publishedDate}
                         id={book.id}
-                    // add an onclick to save the book to the DB
+                        // onclick to save the book to the DB
                         onClick={this.saveBook}
                     />
                 ))}

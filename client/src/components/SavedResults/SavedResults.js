@@ -2,9 +2,9 @@ import React from 'react';
 // import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import './SaveResults.css'
+import './SavedResults.css'
 
-const Results = (props) => {
+const SavedResults = (props) => {
 
     return (
         <Container className="card-container">
@@ -19,13 +19,13 @@ const Results = (props) => {
                     <hr></hr>
                     <p className="card-text">{props.description}</p>
                     <div className="buttonsDiv">
-                        <Button className="btn btn-success viewBtn">
+                        {/* <Button className="btn btn-success viewBtn">
                             <a className="link-text" href={props.link}>
                                 View</a>
-                        </Button>
+                        </Button> */}
 
                         {/* on Save button click, save book to DB */}
-                        <Button {...props} className="btn btn-danger deleteBtn">
+                        <Button {...props} variant="danger" className="deleteBtn">
                             Delete
                         </Button>
                     </div>
@@ -35,4 +35,4 @@ const Results = (props) => {
     )
 }
 
-export default Results;
+export default SavedResults;

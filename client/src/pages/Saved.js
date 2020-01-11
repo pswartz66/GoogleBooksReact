@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import API from '../utils/API';
-import SavedResults from '../components/Results';
+import SavedResults from '../components/SavedResults';
 
 // Saved Books Page
 // Displays results
@@ -44,17 +44,17 @@ class Saved extends Component {
             <div>
             <Jumbotron />
             {/* Map through books array in state
-                    and pass props to results component */}
+            and pass props to results component */}
                 {this.state.books.map(book => (
                     <SavedResults
-                        key={book.id}
-                        title={book.volumeInfo.title}
-                        authors={(!book.volumeInfo.authors) ? "No author listed" : book.volumeInfo.authors.join(', ')}
-                        description={(!book.volumeInfo.description) ? "No description available" : book.volumeInfo.description}
-                        link={(!book.volumeInfo.infoLink) ? "No link available" : book.volumeInfo.infoLink}
-                        image={(!book.volumeInfo.imageLinks) ? "No image available" : book.volumeInfo.imageLinks.thumbnail}
-                        date={(!book.volumeInfo.publishedDate) ? "No date available" : book.volumeInfo.publishedDate}
-                        id={book.id}
+                        key={book._id}
+                        title={book.title}
+                        authors={(!book.authors) ? "No author listed" : book.authors.join(', ')}
+                        description={(!book.description) ? "No description available" : book.description}
+                        link={(!book.infoLink) ? "No link available" : book.infoLink}
+                        image={(!book.image) ? "No image available" : book.image}
+                        date={(!book.date) ? "No date available" : book.date}
+                        id={book._id}
                     // add an onclick to delete the book from the DB
                         onClick={this.deleteBook(book._id)}
                     // <DeleteBtn onClick={() => this.deleteBook(book._id)} />
