@@ -2,7 +2,7 @@ import React from 'react';
 // import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import './Results.css'
+import './SaveResults.css'
 
 const Results = (props) => {
 
@@ -25,8 +25,8 @@ const Results = (props) => {
                         </Button>
 
                         {/* on Save button click, save book to DB */}
-                        <Button {...props} className='my-3 saveBtn'>
-                            Save
+                        <Button {...props} className="btn btn-danger deleteBtn">
+                            Delete
                         </Button>
                     </div>
                 </div>

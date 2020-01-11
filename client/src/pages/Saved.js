@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from '../components/Jumbotron';
 import API from '../utils/API';
-import Results from '../components/Results';
+import SavedResults from '../components/Results';
 
 // Saved Books Page
 // Displays results
@@ -46,7 +46,7 @@ class Saved extends Component {
             {/* Map through books array in state
                     and pass props to results component */}
                 {this.state.books.map(book => (
-                    <Results
+                    <SavedResults
                         key={book.id}
                         title={book.volumeInfo.title}
                         authors={(!book.volumeInfo.authors) ? "No author listed" : book.volumeInfo.authors.join(', ')}
@@ -56,6 +56,7 @@ class Saved extends Component {
                         date={(!book.volumeInfo.publishedDate) ? "No date available" : book.volumeInfo.publishedDate}
                         id={book.id}
                     // add an onclick to delete the book from the DB
+                        onClick={this.deleteBook(book._id)}
                     // <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                     />
                 ))}
