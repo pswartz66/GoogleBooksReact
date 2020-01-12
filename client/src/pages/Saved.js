@@ -13,6 +13,7 @@ class Saved extends Component {
         }
     }
 
+    // on mount load all the saved books from the db
     componentDidMount = () => {
         this.loadBooks();
     }
@@ -27,7 +28,8 @@ class Saved extends Component {
                 if (err) {
                     console.log(err);
                 }
-            })
+            }
+        )
     }
 
     // delete a book from "/api/books/:id" route
@@ -38,15 +40,15 @@ class Saved extends Component {
             .catch(err => console.log(err))
     }
 
-
     render() {
         return (
             <div>
                 <Jumbotron />
                 {/* Map through books array in state
-            and pass props to results component */}
+                    and pass props to results component */}
                 {this.state.books.map(book => (
                     <div>
+                        {/* pass db info as props to the SavedResults component */}
                         <SavedResults
                             key={book._id}
                             title={book.title}
@@ -56,15 +58,12 @@ class Saved extends Component {
                             image={(!book.image) ? "No image available" : book.image}
                             date={(!book.date) ? "No date available" : book.date}
                             id={book._id}
-
+                            onClick={() => this.deleteBook(book._id)}
                         // add an onclick to delete the book from the DB
                         // onClick={() => this.deleteBook(book._id)}
-
                         />
-
                     </div>
                 ))}
-
             </div>
         )
     }

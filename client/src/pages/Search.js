@@ -17,12 +17,6 @@ class Search extends Component {
         }
     }
 
-    // call loadBooks fn on DidMount 
-    // to display current books in database
-    componentDidMount = () => {
-        // this.loadBooks();
-    }
-
     // load books fetches the books from google books API
     // and sets state to the data as an array
     loadBooks = () => {
@@ -79,6 +73,7 @@ class Search extends Component {
             }
         }
 
+        // pass "book" as an object to the saveBook method
         API.saveBook( book )
             .then(res => console.log(res))
             .catch(err => console.log('error code' + err))
@@ -98,6 +93,8 @@ class Search extends Component {
                 {/* Map through books array in state
                     and pass props to results component */}
                 {this.state.books.map(book => (
+
+                    /* pass google api info as props to the Results component */
                     <Results
                         key={book.id}
                         title={book.volumeInfo.title}

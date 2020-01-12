@@ -3,7 +3,6 @@ import './SearchBar.css';
 // Default Bootstrap Component
 import Container from 'react-bootstrap/Container';
 
-
 // SearchBar Component
 // Props to be passed via text/string of the namne of a book to be searched for
 const SearchBar = props => {
@@ -20,8 +19,7 @@ const SearchBar = props => {
                     className="form-control" 
                     placeholder="Search the title of your favorite book..."
                     >
-                        
-                    </input>
+                </input>
            </div>
            <button
                 onClick={props.onClick}
