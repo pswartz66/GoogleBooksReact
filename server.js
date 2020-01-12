@@ -14,8 +14,10 @@ if (process.env.NODE_ENV === "production") {
 // Add routes for API and views
 app.use(routes);
 
+
 // Connect to Mongo
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI); //|| "mongodb://localhost/googlebooks");
 
 
 // Start the Server
