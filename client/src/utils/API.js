@@ -1,16 +1,17 @@
 
 /* import dotenv from 'dotenv'; */
 import axios from 'axios';
+import dotenv from 'dotenv';
 const BookSearchURL = 'https://www.googleapis.com/books/v1/volumes?q='
-
+const key = dotenv.key;
 
 export default {
     // Search for books
     searchBooks: function(query) {
         let formatQuery = query.split(' ').join('+');
-        console.log(BookSearchURL + formatQuery + '&key=' + process.env.REACT_APP_Key);
+        console.log(BookSearchURL + formatQuery + '&key=' + key);
         // store in backend after npm run build
-        return axios.get(BookSearchURL + formatQuery + '&key=' + process.env.REACT_APP_Key);
+        return axios.get(BookSearchURL + formatQuery + '&key=' + key);
     },
     // Get all books
     getBooks: function() {
