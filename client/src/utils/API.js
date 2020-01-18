@@ -9,9 +9,9 @@ export default {
     // Search for books
     searchBooks: function(query) {
         let formatQuery = query.split(' ').join('+');
-        console.log(BookSearchURL + formatQuery + '&key=' + key);
+        console.log(BookSearchURL + formatQuery + key);
         // store in backend after npm run build
-        return axios.get(BookSearchURL + formatQuery + '&key=' + key);
+        return axios.get(BookSearchURL + formatQuery + key);
     },
     // Get all books
     getBooks: function() {
